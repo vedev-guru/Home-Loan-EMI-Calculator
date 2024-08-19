@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <title>Home Loan EMI Calculator with Prepayments, Taxes &amp; Insurance</title>
+        <meta name="description" content="Home Loan EMI Calculator - Calculate Home Loan EMI along with Partial Prepayments, Margin, Property Taxes, HLPP, Home Insurance &amp; Monthly Maintenance Charges" />
+        <link rel="stylesheet" id="sage/css-css" href="./javascript/main.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="commoncalculator_css-css" href="./javascript/commoncalculator.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="homeloanemicalculator_css-css" href="./javascript/homeloanemicalculator.css" type="text/css" media="all" />
+        <script src="./javascript/jquery.min.js" id="jquery-core-js"></script>
+    </head>
+    <body class="page-template page-template-template-homeloanemicalculator page-template-template-homeloanemicalculator-php page page-id-3288 home-loan-emi-calculator">
+        <div class="wrap container" role="document">
+            <div class="content row">
+                <main class="main">
+                    <article class="post-3288 page type-page status-publish hentry">
+                        <div class="page-header"><h1>Home Loan EMI Calculator with Prepayments, Taxes &amp; Insurance</h1></div>
+                        <div class="calculatorcontainer">
+                            <div class="homeloanemicalculatorcontainer">
+                                <form id="homeloanemicalculatorform">
+                                    <div id="homeloanemicalculatorformInner">
+                                        <div class="row">
+                                            <div class="homeloandetails col-lg-6 col-xl-12">
+                                                <div class="row">
+                                                    <div class="col loandetailsheader gutter-left gutter-right"><h3 id="ld">Home Loan Details</h3></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-3 form-group lhomeprice">
+                                                        <label class="control-label" for="homeprice">Home Value (HV)</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" tabindex="1" id="homeprice" name="homeprice" value="65,00,000" type="text" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">₹</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group ldownpayment">
+                                                        <label class="control-label" for="downpayment">Margin OR Down Payment (DP)</label>
+                                                        <div class="downpaymentwrapper">
+                                                            <div class="input-group">
+                                                                <input class="form-control" tabindex="2" id="downpayment" name="downpayment" value="20" type="text" />
+                                                                <div class="input-group-append downpaymententrychoice" data-toggle="buttons">
+                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                        <label class="btn btn-secondary active"> <input type="radio" name="downpaymententry" id="downpaymentpercentage" value="downpaymentpercentage" tabindex="3" autocomplete="off" checked="checked" />% </label>
+                                                                        <label class="btn btn-secondary"> <input type="radio" name="downpaymententry" id="downpaymentrupees" value="downpaymentrupees" tabindex="4" autocomplete="off" />₹ </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group hliamount">
+                                                        <label class="control-label" for="homeloaninsuranceamount">Loan Insurance (LI)</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" tabindex="5" id="homeloaninsuranceamount" name="homeloaninsuranceamount" value="1,70,000" type="text" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">₹</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group lamount">
+                                                        <label class="control-label" for="homeloanamount">Loan Amount (HV + LI – DP)</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" tabindex="6" id="homeloanamount" name="homeloanamount" value="45,00,000" type="text" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">₹</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-3 form-group lint">
+                                                        <label class="control-label" for="homeloaninterest">Interest Rate</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" tabindex="7" id="homeloaninterest" name="homeloaninterest" value="10.0" type="text" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">%</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group lterm">
+                                                        <label class="control-label" for="homeloanterm">Loan Tenure</label>
+                                                        <div class="loantermwrapper">
+                                                            <div class="input-group">
+                                                                <input class="form-control" tabindex="8" id="homeloanterm" name="homeloanterm" value="20" type="text" />
+                                                                <div class="input-group-append tenurechoice" data-toggle="buttons">
+                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                        <label class="btn btn-secondary active"> <input type="radio" name="homeloantenure" id="homeloanyears" value="homeloanyears" tabindex="9" autocomplete="off" checked="checked" />Yr </label>
+                                                                        <label class="btn btn-secondary"> <input type="radio" name="homeloantenure" id="homeloanmonths" value="homeloanmonths" tabindex="10" autocomplete="off" />Mo </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group lfees">
+                                                        <label class="control-label" for="loanfees">Loan Fees &amp; Charges</label>
+                                                        <div class="loanfeeswrapper">
+                                                            <div class="input-group">
+                                                                <input class="form-control" tabindex="11" id="loanfees" name="loanfees" value="0.25" type="text" />
+                                                                <div class="input-group-append loanfeesentrychoice" data-toggle="buttons">
+                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                        <label class="btn btn-secondary active"> <input type="radio" name="loanfeesentry" id="loanfeespercentage" value="loanfeespercentage" tabindex="12" autocomplete="off" checked="checked" />% </label>
+                                                                        <label class="btn btn-secondary"> <input type="radio" name="loanfeesentry" id="loanfeesrupees" value="loanfeesrupees" tabindex="13" autocomplete="off" />₹ </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group form-group lstartmonthyear">
+                                                        <label class="control-label" for="startmonthyear">Start Month &amp; Year</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" tabindex="14" id="startmonthyear" name="startmonthyear" value="308,000" type="text" readonly="readonly" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="homeownerexpenses col-lg-6 col-xl-12">
+                                                <div class="row">
+                                                    <div class="col expensesheader gutter-left gutter-right"><h3 id="exp">Homeowner Expenses</h3></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-3 form-group lonetimeexpenses">
+                                                        <label class="control-label" for="onetimeexpenses">One-time Expenses</label>
+                                                        <div class="onetimeexpenseswrapper">
+                                                            <div class="input-group">
+                                                                <input class="form-control" tabindex="15" id="onetimeexpenses" name="onetimeexpenses" value="10" type="text" />
+                                                                <div class="input-group-append onetimeexpensesentrychoice" data-toggle="buttons">
+                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                        <label class="btn btn-secondary active"> <input type="radio" name="onetimeexpensesentry" id="onetimeexpensespercentage" value="onetimeexpensespercentage" tabindex="16" autocomplete="off" checked="checked" />% </label>
+                                                                        <label class="btn btn-secondary"> <input type="radio" name="onetimeexpensesentry" id="onetimeexpensesrupees" value="onetimeexpensesrupees" tabindex="17" autocomplete="off" />₹ </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group lpropertytaxes">
+                                                        <label class="control-label" for="propertytaxes">Property Taxes / year</label>
+                                                        <div class="propertytaxeswrapper">
+                                                            <div class="input-group">
+                                                                <input class="form-control" tabindex="18" id="propertytaxes" name="propertytaxes" value="0.25" type="text" />
+                                                                <div class="input-group-append propertytaxesentrychoice" data-toggle="buttons">
+                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                        <label class="btn btn-secondary active"> <input type="radio" name="propertytaxesentry" id="propertytaxespercentage" value="propertytaxespercentage" tabindex="19" autocomplete="off" checked="checked" />% </label>
+                                                                        <label class="btn btn-secondary"> <input type="radio" name="propertytaxesentry" id="propertytaxesrupees" value="propertytaxesrupees" tabindex="20" autocomplete="off" />₹ </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group lhomeinsurance">
+                                                        <label class="control-label" for="homeinsurance">Home Insurance / year</label>
+                                                        <div class="homeinsurancewrapper">
+                                                            <div class="input-group">
+                                                                <input class="form-control" tabindex="21" id="homeinsurance" name="homeinsurance" value="0.05" type="text" />
+                                                                <div class="input-group-append hoientrychoice" data-toggle="buttons">
+                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                        <label class="btn btn-secondary active"> <input type="radio" name="homeinsuranceentry" id="homeinsurancepercentage" value="homeinsurancepercentage" tabindex="22" autocomplete="off" checked="checked" />% </label>
+                                                                        <label class="btn btn-secondary"> <input type="radio" name="homeinsuranceentry" id="homeinsurancerupees" value="homeinsurancerupees" tabindex="23" autocomplete="off" />₹ </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 form-group form-group lmaintenanceexpenses">
+                                                        <label class="control-label" for="maintenanceexpenses">Maintenance Expenses / month</label>
+                                                        <div class="input-group">
+                                                            <input class="form-control" tabindex="24" id="maintenanceexpenses" name="maintenanceexpenses" value="2,500" type="text" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">₹</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div id="extrapayments">
+                                                    <div class="row">
+                                                        <div class="col extrapaymentsheader gutter-left gutter-right"><h3 id="ep">Partial Prepayments — Amount and Start Date</h3></div>
+                                                    </div>
+                                                    <div class="row extrapaymentchoices">
+                                                        <div class="col-lg-3 emonthly extraperiod">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="extramonthly">Monthly</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control rupeeamount" tabindex="25" id="extramonthly" name="extramonthly" value="0" type="text" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text">₹</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group extrastartdate">
+                                                                <label class="control-label" for="extramonthlystartmonthyear">starting from</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control" tabindex="26" id="extramonthlystartmonthyear" name="extramonthlystartmonthyear" value="" type="text" readonly="readonly" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 eyearly extraperiod">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="extrayearly">Yearly</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control rupeeamount" tabindex="27" id="extrayearly" name="extrayearly" value="0" type="text" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text">₹</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group extrastartdate">
+                                                                <label class="control-label" for="extrayearlystartmonthyear">starting from</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control" tabindex="28" id="extrayearlystartmonthyear" name="extrayearlystartmonthyear" value="" type="text" readonly="readonly" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 equarterly extraperiod">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="extraquarterly">Quarterly</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control rupeeamount" tabindex="29" id="extraquarterly" name="extraquarterly" value="0" type="text" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text">₹</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group extrastartdate">
+                                                                <label class="control-label" for="extraquarterlystartmonthyear">starting from</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control" tabindex="30" id="extraquarterlystartmonthyear" name="extraquarterlystartmonthyear" value="" type="text" readonly="readonly" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 eonetime extraperiod">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="extraonetime">One-time only</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control rupeeamount" tabindex="31" id="extraonetime" name="extraonetime" value="0" type="text" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text">₹</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="extraonetimestartmonthyear">in the month of</label>
+                                                                <div class="input-group">
+                                                                    <input class="form-control" tabindex="32" id="extraonetimestartmonthyear" name="extraonetimestartmonthyear" value="" type="text" readonly="readonly" />
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input id="loandata" name="loandata" value="" type="hidden" />
+                                        <input id="calcversion" name="calcversion" value="1.0" type="hidden" />
+                                        <div class="cleardiv"></div>
+                                    </div>
+                                </form>
+                                <div class="addextrapayments">
+                                    <a href="#" class="visible-ts extratoggle btn btn-primary btn-block" role="button"><i class="fa fa-plus"></i> Add Prepayments</a>
+                                </div>
+                                <div class="removeextrapayments">
+                                    <a href="#" class="visible-ts extratoggle btn btn-primary btn-block" role="button"><i class="fa fa-minus"></i> Remove Prepayments</a>
+                                </div>
+                                <div class="addextrapayments">
+                                    <a href="#" class="hidden-ts extratoggle btn btn-primary" role="button"><i class="fa fa-plus"></i> Add Prepayments</a>
+                                </div>
+                                <div class="removeextrapayments">
+                                    <a href="#" class="hidden-ts extratoggle btn btn-primary" role="button"><i class="fa fa-minus"></i> Remove Prepayments</a>
+                                </div>
+                                <div id="homeloanpaymentdetails">
+                                    <div class="row justify-content-center">
+                                        <div class="homeloanpaymentsummary col-lg-8">
+                                            <div id="monthlyhomeloanpaymentsummarywrapper">
+                                                <table id="monthlyhomeloanpaymentsummary">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="monthlyprincipalandinterestterm" class="col-8">Principal &amp; Interest (EMI)</td>
+                                                            <td id="monthlyprincipalandinterestdef" class="col-4 currency">₹ 28,533</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="extraterm" class="col-8">Monthly Extra Payment</td>
+                                                            <td id="extradef" class="col-4 currency">₹ 0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="monthlypropertytaxesterm" class="col-8">Property Taxes</td>
+                                                            <td id="monthlypropertytaxesdef" class="col-4 currency">₹ 0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="monthlyhomeinsuranceterm" class="col-8">Home Insurance</td>
+                                                            <td id="monthlyhomeinsurancedef" class="col-4 currency">₹ 0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td id="monthlymaintenanceexpensesterm" class="col-8 lastterm">Maintenance Expenses</td>
+                                                            <td id="monthlymaintenanceexpensesdef" class="col-4 currency lastdef">₹ 0</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-8 aggregatelabel lastterm">Total Monthly Payment</td>
+                                                            <td id="monthlypayment" class="col-4 currency aggregatesum lastdef">₹ 28,533</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div id="totalhomeloanpaymentbreakup">
+                                                <div class="row">
+                                                    <div id="totalhomeloanchart" class="col-12 col-sm-4 highcharts-container"></div>
+                                                    <div class="col-12 col-sm-8">
+                                                        <table id="totalhomeloanpaymentsummary">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td id="downpaymentfeesonetimeexpensesterm" class="col-7">Down Payment, Fees &amp; One-time Expenses</td>
+                                                                    <td id="downpaymentfeesonetimeexpensesdef" class="col-5 currency">₹ 0</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td id="totalprincipalterm" class="col-7">Principal</td>
+                                                                    <td id="totalprincipaldef" class="col-5 currency">₹ 24,40,000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td id="totalextraterm" class="col-7">Prepayments</td>
+                                                                    <td id="totalextradef" class="col-5 currency">₹ 9,60,000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td id="totalinterestterm" class="col-7">Interest</td>
+                                                                    <td id="totalinterestdef" class="col-5 currency">₹ 29,25,609</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td id="totalinsurancemaintenanceandtaxesterm" class="col-7 lastterm">Taxes, Home Insurance &amp; Maintenance</td>
+                                                                    <td id="totalinsurancemaintenanceandtaxesdef" class="col-5 currency lastdef">₹ 0</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-margin">
+                                                    <div class="col-6 aggregatelabel lastterm">Total of all Payments</div>
+                                                    <div id="totalpayment" class="col-6 currency aggregatesum lastdef">₹ 63,25,609</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="amortizationscheduleheader">Home Loan Payment Schedule <br />(<span id="startmonthyeartext">Aug 2024</span> - <span id="endmonthyeartext">Apr 2040</span>)</div>
+                                <div id="paymentschedulechart" class="hidden-ts highcharts-container"></div>
+                                <div id="paymentschedule"></div>
+                                <div id="ecalprintandshare">
+                                    <p id="ecalprintandsharetext">Want to print your Home Loan EMI calculation (with all your numbers pre-filled)?</p>
+                                    <a title="Print this page" class="ecalprint btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-print"></i> Print</a>
+                                    <div id="loader"><i class="fa fa-spinner fa-pulse"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+        <script src="./javascript/main.js" id="sage/js-js"></script>
+        <script src="./javascript/commoncalculator.js" id="commmoncalculator_js-js"></script>
+        <script src="./javascript/homeloanemicalculator.js" id="homeloanemicalculator_js-js"></script>
+    </body>
+</html>
